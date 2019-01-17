@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Anasayfa</h3>
+<hr>
+                <form method = "post" >
+                    
+                    <p>Lütfen Ad Soyad Giriniz...</p>
+                    <p>Entera basınız ya da YOllaya Tıklayınız</p>
+                    <p>Liste Yapıyok... </p>
+<hr>
+                    {% csrf_token %}
+                        {{form.as_p}}
+                    <br>
+                    <button type="submit">Yolla...</button>
+                       
+                </form>
+<br>
+<hr>
+
+<table>
+{% for p in elma %}
+<tr>
+<td>{{p.name}} {{p.surname}}</td>
+<td>Yavşaktır...</td>
+
+</tr>
+{% endfor %}
+</table>
+<hr>
+
+
+{% endblock body %}
