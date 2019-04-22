@@ -1,13 +1,12 @@
 {% extends "layout.html" %}
-
+ 
 {% block body %}
-<h3>Anasayfa</h3>
+<h3>Django Pysql Aws Deneme Sayfası</h3>
 <hr>
                 <form method = "post" >
                     
                     <p>Lütfen Ad Soyad Giriniz...</p>
-                    <p>Entera basınız ya da YOllaya Tıklayınız</p>
-                    <p>Liste Yapıyok... </p>
+                    <p>Entera basınız ya da Yollaya Tıklayınız</p>
 <hr>
                     {% csrf_token %}
                         {{form.as_p}}
@@ -18,16 +17,18 @@
 <br>
 <hr>
 
-<table>
+
+<ul>
+
 {% for p in elma %}
-<tr>
-<td>{{p.name}} {{p.surname}}</td>
-<td>Yavşaktır...</td>
 
-</tr>
+<li>
+	{{p.name}} {{p.surname}} ->  Eklendi...
+</li>
 {% endfor %}
-</table>
-<hr>
+</ul>
 
+<hr>
+<p>iletişim demirtaserdem@gmail.com</p>
 
 {% endblock body %}

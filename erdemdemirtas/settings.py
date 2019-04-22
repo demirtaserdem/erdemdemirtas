@@ -23,9 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '%$0@4nwe)j+d!q)1*zgow&5r-!z=)djuyih7sub75rd3j4u0z_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['erdemdemirtas.net','erdemdemirtas.net','54.218.198.226']
 
 
 # Application definition
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'erdemdemirtas.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'erdemdemirtas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'erdemdemirtas',
+        'USER': 'demirtaserdem',
+        'PASSWORD': 'Deneme1230*-_',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
@@ -120,6 +125,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, "static"),
+#]
